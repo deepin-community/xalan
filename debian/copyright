@@ -1,0 +1,31 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Xalan-C/C++
+Source: https://xalan.apache.org/xalan-c/index.html
+
+Files: *
+Copyright:  Copyright (c) 1999-2012 The Apache Software Foundation
+License: Apache-2.0
+Comment:
+  This product includes software developed at
+  The Apache Software Foundation (http://www.apache.org/).
+  .
+  This software is based on the ASF XERCES-C project.
+  .
+  Portions of this software were originally based on the following:
+  software copyright (c) 1999, IBM Corporation. (http://www.ibm.com).
+
+
+Files: debian/*
+Copyright:  Copyright 2002, Berin Lautenbach  <berin@ozemail.com.au>
+            Copyright 2013-1014, William Blough <devel@blough.us>
+License: Apache-2.0
+Comment:
+  This package was debianized by Berin Lautenbach <berin@ozemail.com.au> on
+  Mon, 30 Dec 2002 21:56:38 +1100. It is based on the packaging originally
+  done by Nicolás Lichtmaier <nick@debian.org>.
+
+
+License: Apache-2.0
+  On Debian systems a copy of the Apache-2.0 license can be viewed at:
+  /usr/share/common-licenses/Apache-2.0
+

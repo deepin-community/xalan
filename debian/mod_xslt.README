@@ -1,0 +1,60 @@
+   ApacheModuleXSLT
+   ================
+   
+   What it does: runs as an Apache module on an Apache Web server;
+   performs transformations and returns the output to a Web browser. You
+   configure Apache to respond to a given URL request for an output file
+   (html or txt file in the configuration below) by applying an xsl
+   stylesheet file to an xml document file (both with the specified name
+   in a given location) and returning the transformation output to the
+   client.
+   
+   This sample also illustrates use of the XalanTransformer class and the
+   C API defined in src/XalanTransformer/XalanCAPI.h. It returns
+   transformation output in blocks to a callback function, which enables
+   the browser to start displaying the result before the transformation
+   has been completed.
+   Note You may need to adjust the Visual C++ or makefile settings to
+   locate the required Apache header files. As shipped, the Visual C++
+   project file looks in \Apache Group\Apache\src\include, and the UNIX
+   makefile looks in usr/lib.
+   
+   Setting up and using ApacheModuleXSLT
+   
+   To use ApacheModuleXSLT, do the following:
+    1. Add a LoadModule entry to the Apache
+       configuration file: httpd.conf.
+               LoadModule xslt_module /usr/lib/apache/1.3/mod_xslt.so
+    2. Add a <Location> entry to httpd.conf that indicates where xml/xsl
+       file pairs are to be found, and what target file extensions to
+       recognize. We suggest the following:
+       <Location /xslt>
+         AddHandler mod_xslt .html
+         AddHandler mod_xslt .txt
+       </Location>
+       This <Location> element instructs the module to respond to
+       requests for xxx.html and xxx.txt files in the in the xslt
+       subdirectory (under the document root; see next item) by applying
+       the xxx.xsl stylesheet to xxx.xml (both in that directory) and
+       returning the transformation result to the browser.
+       For example, a request for foo.html instructs the module to apply
+       foo.xsl to foo.xml and return the result.
+       Note: It is up to the stylesheet to apply the appropriate
+       xsl:output method to the output. Whether the user specifies html
+       or txt is, of itself, immaterial.
+    3. Put xml/xsl file pairs in the <Location> subdirectory (xslt in the
+       example)) under the document root directory specified in
+       httpd.conf by the DocumentRoot and <Directory> settings.
+    4. Start the Apache server.
+    5. From a Web browser, call the module with a URL as follows:
+       http://serverName/xslt/xxx.html
+       where serverName is the Apache server (such as www.myServer.com)
+       and xxx is the name of an xml/xsl pair of files (such as foo.xml
+       and foo.xsl) in the xslt subdirectory under the DocumentRoot
+       directory.
+       For example,
+       http://www.myServer.com/xslt/apachemod.html
+       instructs ApacheModuleXSLT to apply the apachemod.xsl stylesheet
+       to the apachemod.xml XML document (both files in the xslt
+       directory under the Apache DocumentRoot directory) and return the
+       transformation result to the browser.

@@ -1,0 +1,449 @@
+xalan (1.12-6) unstable; urgency=medium
+
+  * Switch to using build dir to avoid arch naming issues. Closes: 979327
+
+ -- William Blough <bblough@debian.org>  Wed, 06 Jan 2021 08:30:26 -0500
+
+xalan (1.12-5) unstable; urgency=medium
+
+  * Use DEB_HOST_GNU_TYPE instead of DEB_HOST_MULTIARCH to fix i386/i686
+    confusion.  Closes: 979327
+
+ -- William Blough <bblough@debian.org>  Tue, 05 Jan 2021 10:11:43 -0500
+
+xalan (1.12-4) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- William Blough <bblough@debian.org>  Thu, 24 Dec 2020 23:23:15 -0500
+
+xalan (1.12-3) experimental; urgency=medium
+
+  * Fix packaging issues related to conversion to cmake. Closes: 976299
+  * Update standards version to 4.5.1 (no changes)
+
+ -- William Blough <bblough@debian.org>  Fri, 11 Dec 2020 12:24:22 -0500
+
+xalan (1.12-2) unstable; urgency=medium
+
+  * Fix packaging issues related to conversion to cmake. Closes: #976299
+
+ -- William Blough <bblough@debian.org>  Fri, 11 Dec 2020 12:16:18 -0500
+
+xalan (1.12-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Fix day-of-week for changelog entries 1.6-3, 1.6-2, 1.6-1.
+
+  [ William Blough ]
+  * Update watch file for move to github
+  * Update upstream signing key
+  * New upstream version 1.12
+  * Update package names with new soname
+  * Update packaging to use new build system and layout
+  * Drop or refresh patches as needed
+  * Add patch to install TestXSLT
+  * Add upstream patch to install XalanCAPI.h
+  * Remove outdated info from d/copyright
+  * Update Standards-Version to 4.5.0 (no changes needed)
+
+ -- William Blough <bblough@debian.org>  Sun, 20 Sep 2020 16:22:25 -0400
+
+xalan (1.11-9) unstable; urgency=medium
+
+  * Add patch from Andreas Beckmann for building on Hurd (Closes: 884037)
+  * Update standards-version to 4.2.1 (no changes)
+  * Add gbp.conf
+  * Update VCS URLs
+  * Update maintainer email
+
+ -- William Blough <bblough@debian.org>  Wed, 05 Dec 2018 11:31:57 -0500
+
+xalan (1.11-8) unstable; urgency=medium
+
+  * Move examples back to -doc package, fixing an unintented change
+    in the previous package.
+
+ -- William Blough <devel@blough.us>  Mon, 07 May 2018 22:17:20 -0400
+
+xalan (1.11-7) unstable; urgency=medium
+
+  * Add makefile dependencies to fix parallel builds. Closes: #849344
+  * Upgrade to dh compat 11
+  * Update to standards version 4.1.4
+    - Update copyright format link to use https
+  * Lintian fixes
+    - Remove trailing whitespace from changelog
+    - Switch d/watch to use https
+    - Fix NOTICE file issues
+    - Remove unused override
+
+ -- William Blough <devel@blough.us>  Thu, 03 May 2018 00:59:32 -0400
+
+xalan (1.11-6) unstable; urgency=medium
+
+  * Update makefiles to honor CPPFLAGS
+  * Remove lintian override for hardening flags
+  * Update standards version to 3.9.8 (no changes)
+  * Remove autotools-dev dependency due to using dh-autoreconf
+  * Add bindnow hardening flag
+  * Add lintian override for doxygen's copy of jquery
+  * Build in release mode instead of debug mode.  This works around
+    the assertion error reported in bug 783173.
+  * Remove and symlink duplicate files in examples (lintian fix)
+
+ -- William Blough <devel@blough.us>  Tue, 20 Dec 2016 03:23:16 -0500
+
+xalan (1.11-5) unstable; urgency=low
+
+  * Remove symbol control file due to problems with non amd64 builds.
+
+ -- William Blough <devel@blough.us>  Mon, 20 Oct 2014 04:35:21 -0400
+
+xalan (1.11-4) unstable; urgency=low
+
+  * Apply upstream patch to fix segfault in xalan (testXSLT).
+    Closes: #718303
+  * Update Standards-Version to 3.9.6 (no changes needed)
+  * Update compat to 9 and simplify debian/rules
+  * Add symbol control file, pgp signature for tarball verification
+  * Update debian/copyright to dep5
+  * Remove unnecessary lintian override
+  * Add lintian override for false positive
+
+ -- William Blough <devel@blough.us>  Thu, 16 Oct 2014 23:10:27 -0400
+
+xalan (1.11-3) unstable; urgency=low
+
+  * Reworked fix-ftbfs-ld-as-needed patch to remove warning. Closes: #718605
+
+ -- William Blough <devel@blough.us>  Fri, 02 Aug 2013 21:57:03 -0400
+
+xalan (1.11-2) unstable; urgency=low
+
+  * Include Xalan executable in package, in addition to the existing
+    xalan (TestXSLT) executable, closes: #329639
+  * Add man page for Xalan executable
+
+  * Fix incorrect suggest in debian/control
+  * Add copyright info for install-sh in debian/copyright
+  * Add copyright info to xalan man page
+
+  * Fix install conflicts due to package rename,
+  * Adjust doc-base path for -doc package,
+  * add Conflicts to debian/control for -dev package
+  * closes: 716941
+
+  * Add lintian override for typo false positive
+  * Add additional description text for -doc package in debian/control
+
+ -- William Blough <devel@blough.us>  Wed, 17 Jul 2013 15:14:37 -0400
+
+xalan (1.11-1) unstable; urgency=low
+
+  * New maintainer, closes: #503562
+  * Add VCS URLs
+  * Update Homepage URL
+  * Update Standards-Version to 3.9.4
+  * Update debian/copyright
+  * Update debian/watch
+
+  * New upstream release
+  * Update SONAME and package name to reflect new version.
+  * Update Xerces dependency from version 2.x to 3.x
+  * Adjust doc install due to upstream changes
+  * Update patch for doxygen-disable-dot to apply to new version
+  * Update patch for 641289 (FTBFS with ld) to apply to new version
+  * Update patch for 347196 (kFreeBSD support) to apply to new version
+  * Remove patch for 454820 (FTBFS, missing includes) - changes applied
+        upstream
+  * Remove patch for 351603 (atan2 in EXSLT) - changes applied upstream
+  * Remove patch for 85690 (printWriter wchar_t) - upstream code
+        changes should eliminate issue
+
+  * Always regenerate configure when building package
+  * Fix lintian complaints about hypens in the man page
+  * Change package names to comply with policy
+  * Rewrite package descriptions
+  * Remove versions from -doc and -dev package names
+  * Fix typo errors in README
+
+
+ -- William Blough <devel@blough.us>  Sun, 16 Jun 2013 13:54:33 -0400
+
+xalan (1.10-6) unstable; urgency=low
+
+  * QA upload.
+  * Disable building in parallel; upstream makefile is not parallel-safe after
+    all.
+
+ -- Jakub Wilk <jwilk@debian.org>  Thu, 10 Nov 2011 11:27:38 +0100
+
+xalan (1.10-5) unstable; urgency=low
+
+  * QA upload.
+  * Add ${misc:Depends}.
+  * Add build-arch and build-indep targets.
+  * Move doxygen to Build-Depends-Indep. Build documentation only if it's
+    installed.
+  * Remove duplicate Section field from debian/control.
+  * Bump standards version to 3.9.2 (no changes needed).
+  * Bump debhelper compatiblity level to 8.
+    + Update Build-Depends.
+    + Use dh_prep instead of dh_clean -k.
+  * Convert to source format 3.0 (quilt).
+    + Add debian/source/format.
+    + Split monolithic *.diff.gz into separate patches.
+    + Undo the following changes that are no longer needed:
+      - use of xalan-config.h;
+      - changes related to mod_xslt;
+      - files from 1.8 upstream tarball that are no longer present in 1.10
+        upstream tarball.
+  * Update config.{guess,sub} unconditionally. Actually remove them in the
+    clean target.
+  * Bump shlibs to >= 1.10-3.3 (closes: #482174). Thanks to Tommi Vainikainen
+    and Michael Meskes for the bug report.
+  * Improve debian/rules:
+    + Remove commented-out commands.
+    + Use $(CURDIR) instead of $(shell pwd) in debian/rules.
+    + Pass CFLAGS, CXXFLAGS, CPPFLAGS and LDFLAGS (acquired from
+      dpkg-buildflags) to the configure script.
+    + Pass --build (and --host if cross-compiling) to the configure script.
+    + Pass -a to most dh_* commands is binary-arch.
+    + Add support for DEB_BUILD_OPTIONS=noopt.
+    + Add support for DEB_BUILD_OPTIONS=parallel=n.
+    + Remove unused variables.
+  * Remove obsolete Conflicts/Replaces.
+  * Multi-archify:
+    + Bump minimum required version of dpkg-dev to 1.16.
+    + Bump minimum required version of debhelper to 8.1.3.
+    + Make xalan ‘Multi-Arch: foreign’.
+    + Install shared libraries to /usr/lib/$(DEB_HOST_MULTIARCH) rather than
+      /usr/lib.
+    + Make libxalan110 and libxalan110-dev ‘Multi-Arch: same’.
+    + Add ‘Pre-Depends: ${misc:Pre-Depends}’ to libxalan110.
+  * Fix FTBFS with ld --as-needed (closes: #641289). Thanks to Matthias Klose
+    for the bug report and the patch.
+
+ -- Jakub Wilk <jwilk@debian.org>  Thu, 10 Nov 2011 00:58:47 +0100
+
+xalan (1.10-4) unstable; urgency=low
+
+  * QA upload.
+    + Set maintainer to Debian QA Group <packages@qa.debian.org>.
+  * Acknowledge NMUs.
+  * Add ${misc:Depends}.
+  * Replace deprecated ${Source-Version} with ${binary:Version}.
+  * Add watch file.
+  * Add Homepage.
+  * Remove full Apache license text from debian/copyright.
+  * Actually install man page.
+  * Copy in config.{guess,sub} on configure, rm them on clean.
+    + Add autotools-dev build-dep.
+  * Bump debhelper build-dep and compat to 5.
+  * Bump Standards Version to 3.8.0.
+
+ -- Barry deFreese <bdefreese@debian.org>  Mon, 02 Feb 2009 21:02:06 -0500
+
+xalan (1.10-3.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Change build dependency from libxerces27-dev to libxerces-c2-dev
+    (closes: #479194)
+
+ -- Jay Berkenbilt <qjb@debian.org>  Fri, 09 May 2008 18:37:51 -0400
+
+xalan (1.10-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS with GCC 4.3 (Closes: #454820).
+
+ -- Luk Claes <luk@debian.org>  Sun, 16 Mar 2008 15:25:52 +0000
+
+xalan (1.10-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove dependency on libapache-dev and drop libapache-mod-xslt.
+    Closes: #429653
+
+ -- Andreas Barth <aba@not.so.argh.org>  Sat, 21 Jul 2007 09:10:09 +0000
+
+xalan (1.10-3) unstable; urgency=low
+
+  * Copy generated file LocalMsgIndex into development package
+    (closes: #355735)
+
+ -- Berin Lautenbach <berin@debian.org>  Sat, 11 Mar 2006 11:09:00 +1100
+
+xalan (1.10-2) unstable; urgency=low
+
+  * Add patch for building under GNU/kFreeBSD from
+    Petr Salinger (closes: #347196)
+  * Update man pages to reflect changes in xalan executable parameters
+  * Add patch provided by Eugeniy Meshcheryakov to correctly handle
+    atan2 EXSLT function (closes: bug#351603)
+
+ -- Berin Lautenbach <berin@debian.org>  Mon,  6 Feb 2006 21:08:00 +1100
+
+xalan (1.10-1) unstable; urgency=low
+
+  * New upstream release (closes: #315081)
+  * Built against new g++ 4 (closes: bug#339279)
+  * Linked to Xerces 2.7 (closes: bug#339396)
+
+ -- Berin Lautenbach <berin@debian.org>  Sat,  7 Jan 2006 12:22:28 +1100
+
+xalan (1.8-5) unstable; urgency=low
+
+  * Build with g++ 4 (closes: bug#324178)
+  * Build against Xerces 2.5c2 (g++ 4.0 version of Xerces with ICU)
+  * Update xerces version dependency to reflect c2 version
+  * Mark as conflictint with libapache-modxslt
+
+ -- Berin Lautenbach <berin@debian.org>  Sun, 21 Aug 2005 17:03:00 +1000
+
+xalan (1.8-4) unstable; urgency=low
+
+  * Ensure builds with g++ 3.4 (closes: bug#276610)
+
+ -- Berin Lautenbach <berin@debian.org>  Sat, 16 Oct 2004 20:00:00 +1000
+
+xalan (1.8-3) unstable; urgency=low
+
+  * Update doc-base file for version 1.8 (closes: bug#261628)
+
+ -- Berin Lautenbach <berin@debian.org>  Wed, 28 Jul 2004 08:15:00 +1000
+
+xalan (1.8-2) unstable; urgency=low
+
+  * Fix typo in man page (closes: bug#253145)
+  * Move dependency on Xerces to 2.5.0-2 as 2.5.0-1 has a bug that
+    breaks builds on alpha and powerpc platforms
+
+ -- Berin Lautenbach <berin@debian.org>  Tue,  6 Jul 2004 10:03:00 +1000
+
+xalan (1.8-1) unstable; urgency=low
+
+  * New upstream release
+  * Update to use Xerces 2.5 (rather than 2.3)
+  * Update copyright to include ASL 2.0 and removed ASL 1.1
+
+ -- Berin Lautenbach <berin@debian.org>  Sat, 29 May 2004 11:29:18 +1000
+
+xalan (1.6-3) unstable; urgency=low
+
+  * Pass correct library flags to apxs for mod_xslt build (closes: bug#241363)
+  * Fix section for -dev (devel should be libdevel)
+
+ -- Berin Lautenbach <berin@debian.org>  Sat, 03 Apr 2004 13:30:00 +1000
+
+xalan (1.6-2) unstable; urgency=low
+
+  * Removed unnecessary dependencies from Build-Depends
+  * Cleaned up descriptions of packages
+  * Cleaned up changelog
+  * Moved to policy 3.6.1
+
+ -- Berin Lautenbach <berin@debian.org>  Sun, 07 Mar 2004 20:45:00 +1000
+
+xalan (1.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Update MAN pages (closes: bug#202182,bug#202156)
+  * Update to use Xerces 2.3 (rather than 2.1)
+  * Changed priority to extra (was optional)
+  * Expanded descriptions for xalan and libxalan16
+    (closes: bug#209606,bug#209797)
+
+ -- Berin Lautenbach <berin@ozemail.com.au>  Wed, 10 Sep 2003 11:29:18 +1000
+
+xalan (1.4-2) unstable; urgency=low
+
+  * Fixed policy violation, a conflict with libxalan1 (closes: bug#189223)
+  * embedded soname is now libxalan.so.14 (rather than .so.1 -> so.1.4.0)
+
+ -- Berin Lautenbach <berin@ozemail.com.au>  Thu, 17 Apr 2003 20:13:38 +1000
+
+xalan (1.4-1) unstable; urgency=low
+
+  * New upstream release.  closes: bug#142328,bug#151003,bug#128905.
+  * Moved to source archive rather than binary archive as the source.orig
+  * Modified rules to use dh_* functions where possible
+  * Build HTML API docs using doxygen
+  * Modified DoxyfileXalan to stop graphviz usage, as graphviz is a
+    non-free package
+  * Created new libxalan??-docs package as the HTML is rather large
+  * New Maintainer (Closes: #174345)
+  * Fixed bug in determining base filename in mod_xslt (closes: bug#173836)
+
+ -- Berin Lautenbach <berin@ozemail.com.au>  Mon, 30 Dec 2002 21:56:38 +1100
+
+xalan (1.2-2.2) unstable; urgency=high
+
+  * NMU; urgency=high because of grave bug.
+  * Comment out broken assert in XalanDOMString.hpp.  Closes: #133173.
+  * Removed weird gcc argument "-instances=static" from Makefile.in
+    and Makefile, as it causes build failures on gcc 3.0 (hppa).
+    Closes: #134125.
+
+ -- Jeff Licquia <licquia@debian.org>  Mon, 11 Mar 2002 11:28:30 -0500
+
+xalan (1.2-2.1) unstable; urgency=high
+
+  * Non-Maintainer Upload with high priority because xalan is completely
+    broken atm
+  * control: now Build-Depends on libxerces1-dev 1.5.2-1 (closes: #121323)
+
+ -- Guillaume Morin <gemorin@debian.org>  Tue, 22 Jan 2002 15:54:40 +0100
+
+xalan (1.2-2) unstable; urgency=low
+
+  * Updated doc-base control file (closes:Bug#117363).
+  * Updated config.guess and config.sub with new versions
+    (closes:Bug#116512).
+  * Shared libraries now build with -fPIC instead of -fpic
+    (closes:Bug#117409).
+
+ -- Nicolás Lichtmaier <nick@debian.org>  Mon, 29 Oct 2001 08:22:18 -0300
+
+xalan (1.2-1) unstable; urgency=low
+
+  * New upstream release (closes:Bug#111062,Bug#113853).
+  * More fixes to moronic upstream configure.in.
+  * Renamed shared library package to libxalan1.2.
+  * Packaged the simple XSLT module for Apache. I've tested it and it works.
+    I've added a minor but important feature, if the XSLT transformation
+    goes wrong logs the Xalan error to the server's errorlog.
+
+ -- Nicolás Lichtmaier <nick@debian.org>  Sun, 21 Oct 2001 05:05:20 -0300
+
+xalan (1.0-3) unstable; urgency=low
+
+  * Fixed using the DEB_BUILD_OPTIONS variable to build with -g.
+  * Did s/print/write/ on 'm_printWriter.print(XalanUnicode::charColon);'
+    since XalanUnicode::charColon is a wchar_t and it changes its size among
+    platforms, and there's no print() for that type, but there's a write
+    function, and all the remaining print's seems to be forwarding their
+    arguments to write(). I hope I got this right. Now it builds on Alpha
+    (closes:Bug#85690).
+
+ -- Nicolás Lichtmaier <nick@debian.org>  Sat, 17 Feb 2001 02:57:25 -0300
+
+xalan (1.0-2) unstable; urgency=low
+
+  * Added an autoconf check for endianness. Removed tests that
+    weren't being used, and removed non-existant Makefiles from
+    AC_OUTPUT (closes:Bug#85383,Bug#85341). This was preventing
+    Xalan from building in big-endian machines other
+    than... Solaris (and I thought it was an OS).
+
+ -- Nicolás Lichtmaier <nick@debian.org>  Fri,  9 Feb 2001 22:46:57 -0300
+
+xalan (1.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Nicolás Lichtmaier <nick@debian.org>  Thu,  2 Nov 2000 00:23:18 -0300

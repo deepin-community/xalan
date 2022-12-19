@@ -1,0 +1,15 @@
+apiDocs
+-------
+
+The HTML documentation found in apiDocs is created by DoxyGen
+from the annotated source.
+
+Programming guides can be found at http://xml.apache.org
+
+
+examples
+--------
+
+These are sample programs provided with the Xalan distribution
+to provide examples as to how to use the Xalan library.
+

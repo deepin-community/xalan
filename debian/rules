@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+#build in release mode, not debug mode
+export DEB_CFLAGS_MAINT_APPEND=-DNDEBUG
+export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG
+
+export BUILD_DIR=build
+
+%:
+	dh $@ --builddirectory=${BUILD_DIR}
+
+override_dh_auto_build-indep:
+	( cd ${BUILD_DIR} && $(MAKE) doc-api)
+
+
+# Don't run tests for arch-indep (doc) build
+override_dh_auto_test-indep:
+
+override_dh_installexamples:
+	chmod 644 samples/configure.in
+	dh_installexamples --doc-main-package=libxalan-c-doc -plibxalan-c-doc \
+		-XTraceListen/birds.xml -XTraceListen/birds.xsl -XTransformToXercesDOM/birds.xml \
+		-XSimpleTransform/foo.xml -XSimpleTransform/foo.xsl -XXalanTransformerCallback/foo.xsl \
+		-XXalanTransformerCallback/foo.xml -XXPathWrapper/foo.xml -X*.out samples/*
+
+override_dh_installdocs:
+	dh_installdocs -A NOTICE

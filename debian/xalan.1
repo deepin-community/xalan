@@ -1,0 +1,121 @@
+.TH XALAN 1 2001 "Debian GNU/Linux"
+.SH NAME
+xalan \- Process XML documents with XSLT stylesheets
+.SH SYNOPSIS
+
+.BI xalan \ [options]
+
+.SH DESCRIPTION
+
+Xalan-C++ (named after a rare musical instrument) implements the W3C
+Recommendation 16 November 1999 XSL Transformations (XSLT) Version 1.0
+and the XML Path Language (XPath) Version 1.0. XSLT is the first part
+of the XSL stylesheet language for XML. It includes the XSL
+Transformation vocabulary and XPath, a language for addressing parts
+of XML documents. For links to background materials, discussion
+groups, frequently asked questions, and tutorials on XSLT, see Getting
+up to speed with XSLT.
+.PP
+You use the XSLT language to compose XSL stylesheets. An XSL
+stylesheet contains instructions for transforming XML documents from
+one document type to another document type (XML, HTML, or other). In
+structural terms, an XSL stylesheet specifies the transformation of
+one tree of nodes (the XML input) into another tree of nodes (the
+output or transformation result).
+
+.SH OPTIONS
+Options are case-sensitive.
+.TP
+.BI \-in \ URL
+Sets the input URL.  If nothing is set, stdin is used.
+.TP
+.BI \-xsl \ URL
+Sets the XSLT sheet URL.
+.TP
+.BI \-out \ file
+Sets the output filename.
+.TP
+.B \-v
+Show version information only.
+.TP
+.B \-qc
+Quiet pattern conflicts warnings.
+.TP
+.B \-q
+Use quiet mode.
+.TP
+.BI \-indent \ n
+Controls how many spaces to indent. Default is 0.
+.TP
+.B \-validate
+Controls whether validation occurs. Validation is off by default.
+.TP
+.B \-tt
+Trace the templates as they are being called.
+.TP
+.B \-tg
+Trace each generation event.
+.TP
+.B \-ts
+Trace each selection event.
+.TP
+.B \-ttc
+Trace the template children as they are being processed.
+.TP
+.B \-xml
+Use XML formatter and add XML header.
+.TP
+.B \-text
+Use simple Text formatter.
+.TP
+.B \-html
+Use HTML formatter.
+.TP
+.B \-dom
+Use DOM formatter.  Formats to DOM, then formats XML for output.
+.TP
+.B \-xst
+Use source tree formatter.  Formats to Xalan source tree, then formats XML for output.
+.TP
+.BI \-param " name expression"
+Sets a stylesheet parameter.
+.TP
+.B \-xd
+Use Xerces DOM instead of Xalan source tree.
+.TP
+.B \-de
+Disable built-in extension functions
+.PP
+The following option is valid only with \-HTML
+.TP
+.B \-noindent
+Turn off HTML indenting.
+.PP
+The following option is valid only with \-XML.
+.TP
+.B \-nh
+Don't write XML header.
+.SH AUTHOR
+The Apache Software Foundation.
+.SH "SEE ALSO"
+.TP
+.I http://www.w3.org/TR/xslt
+XSL Transformations Version 1.0 (XSLT)
+.TP
+.I http://www.w3.org/TR/xpath
+XML Path Language Version 1.0 (XPATH)
+.SH COPYRIGHT
+Copyright (c) 1999-2012 The Apache Software Foundation
+.PP
+This product includes software developed at The Apache Software Foundation (
+.I http://www.apache.org/
+).
+.PP
+This software is based on the ASF XERCES-C project.
+.PP
+Portions of this software were originally based on the following:
+    - software copyright (c) 1999, IBM Corporation. (
+.I http://www.ibm.com
+).
+.PP
+As of version 1.8, Xalan is now distributed under the Apache license v2.0.

@@ -1,0 +1,11 @@
+c/Makefile
+c/Makefile.incl
+c/Tests/Makefile
+c/config.log
+c/config.status
+c/samples/Makefile
+c/src/xalanc/Makefile
+c/src/xalanc/PlatformSupport/LocalMsgIndex.hpp
+c/src/xalanc/Utils/Makefile
+c/src/xalanc/Utils/MsgCreator/Makefile
+c/src/xalanc/Utils/XalanMsgLib/Makefile

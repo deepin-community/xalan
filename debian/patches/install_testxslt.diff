@@ -1,0 +1,20 @@
+Description: Add TestXSLT to installed binaries
+ Debian has shipped the TestXSLT binary as /usr/bin/xalan, so we'll continue
+ to do so.
+Author: Bill Blough <bblough@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-09-20
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+diff --git a/src/xalanc/TestXSLT/CMakeLists.txt b/src/xalanc/TestXSLT/CMakeLists.txt
+index 20f9ff2..2dd879a 100644
+--- a/src/xalanc/TestXSLT/CMakeLists.txt
++++ b/src/xalanc/TestXSLT/CMakeLists.txt
+@@ -20,3 +20,7 @@
+ add_executable(TestXSLT process.cpp)
+ target_link_libraries(TestXSLT XalanC::XalanC)
+ set_target_properties(TestXSLT PROPERTIES FOLDER "Tests")
++
++install(TARGETS TestXSLT
++  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++  COMPONENT "runtime")

@@ -1,0 +1,28 @@
+Description: Disable dot in Doxyfile.
+Forwarded: not-needed
+Last-Update: 2013-06-16
+
+--- a/docs/doxygen/api.dox.in
++++ b/docs/doxygen/api.dox.in
+@@ -2260,7 +2260,7 @@ HIDE_UNDOC_RELATIONS   = YES
+ # set to NO
+ # The default value is: NO.
+ 
+-HAVE_DOT               = YES
++HAVE_DOT               = NO
+ 
+ # The DOT_NUM_THREADS specifies the number of dot invocations doxygen is allowed
+ # to run in parallel. When set to 0 doxygen will base this on the number of
+--- a/cmake/Doxygen.cmake
++++ b/cmake/Doxygen.cmake
+@@ -20,8 +20,8 @@
+ # Doxygen documentation
+ find_package(Doxygen)
+ set(DOXYGEN_DEFAULT OFF)
+-if (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
++if (DOXYGEN_FOUND)
+   set (DOXYGEN_DEFAULT ON)
+-endif (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
++endif (DOXYGEN_FOUND)
+ option(doxygen "Enable doxygen documentation" ${DOXYGEN_DEFAULT})
+ set(BUILD_DOXYGEN ${doxygen})

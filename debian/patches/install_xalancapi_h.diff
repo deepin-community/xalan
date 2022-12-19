@@ -1,0 +1,17 @@
+Description: Install XalanTransformer/XalanCAPI.h
+Origin: upstream, https://github.com/apache/xalan-c/commit/ef45a833617b8d4250b6a78d369cf9571ee1c2d7
+Last-Update: 2020-09-20
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+diff --git a/src/xalanc/CMakeLists.txt b/src/xalanc/CMakeLists.txt
+index eee478e03..a5d9131c4 100644
+--- a/src/xalanc/CMakeLists.txt
++++ b/src/xalanc/CMakeLists.txt
+@@ -832,6 +832,7 @@ set(xalantransformer_sources
+   XalanTransformer/XercesDOMWrapperParsedSource.cpp)
+ 
+ set(xalantransformer_headers
++  XalanTransformer/XalanCAPI.h
+   XalanTransformer/XalanCompiledStylesheetDefault.hpp
+   XalanTransformer/XalanCompiledStylesheet.hpp
+   XalanTransformer/XalanDefaultDocumentBuilder.hpp
