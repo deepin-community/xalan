@@ -1,0 +1,9 @@
+Document: libxalan-c-doc
+Title: Xalan C/C++ XSLT processor
+Abstract: The documentation of how to use Xalan
+ to incorporate XSLT processing in your programs.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/libxalan-c-doc/apiDocs/html/index.html
+Files: /usr/share/doc/libxalan-c-doc/apiDocs/html/*.html

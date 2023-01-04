@@ -1,0 +1,9 @@
+/usr/share/doc/libxalan-c-doc/examples/ThreadSafe/birds.xml.gz /usr/share/doc/libxalan-c-doc/examples/TraceListen/birds.xml.gz
+/usr/share/doc/libxalan-c-doc/examples/ThreadSafe/birds.xml.gz /usr/share/doc/libxalan-c-doc/examples/TransformToXercesDOM/birds.xml.gz
+/usr/share/doc/libxalan-c-doc/examples/CompileStylesheet/foo.xml /usr/share/doc/libxalan-c-doc/examples/SimpleTransform/foo.xml
+/usr/share/doc/libxalan-c-doc/examples/ThreadSafe/birds.xsl /usr/share/doc/libxalan-c-doc/examples/TraceListen/birds.xsl
+/usr/share/doc/libxalan-c-doc/examples/CompileStylesheet/foo.xsl usr/share/doc/libxalan-c-doc/examples/SimpleTransform/foo.xsl
+/usr/share/doc/libxalan-c-doc/examples/XalanTransform/foo.xml /usr/share/doc/libxalan-c-doc/examples/XalanTransformerCallback/foo.xml
+/usr/share/doc/libxalan-c-doc/examples/SerializeNodeSet/foo.xml /usr/share/doc/libxalan-c-doc/examples/XPathWrapper/foo.xml
+/usr/share/doc/libxalan-c-doc/examples/XalanTransform/foo.xsl /usr/share/doc/libxalan-c-doc/examples/XalanTransformerCallback/foo.xsl
+

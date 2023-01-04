@@ -1,0 +1,7 @@
+src/xalanc/PlatformSupport/*.hpp usr/include/xalanc/PlatformSupport/
+src/xalanc/ICUBridge/*.hpp usr/include/xalanc/ICUBridge/
+src/xalanc/TestXPath/*.hpp usr/include/xalanc/TestXPath/
+src/xalanc/Utils/MsgCreator/*.hpp usr/include/xalanc/Utils/MsgCreator/
+src/xalanc/Utils/XalanMsgLib/*.hpp usr/include/xalanc/Utils/XalanMsgLib/
+usr/include/*
+usr/lib/*/lib*.so
